@@ -28,3 +28,7 @@ Currently the following are the biggest limitations I see for most developers to
 - no localhost
 - no dependency types
 - git push is slightly more awkward
+
+# Development
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/janwilmake/onlybrowse) <!-- for easy deployment, ensure to add this into the readme of the created project -->

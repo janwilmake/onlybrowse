@@ -1,0 +1,4 @@
+name = "onlybrowse"
+compatibility_date = "2025-05-30"
+route.pattern = "onlybrowse.net"
+route.custom_domain = true

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onlybrowse - Web-Only Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            padding: 80px 0;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+
+        .limitations {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .limitations h3 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .limitations ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .limitations li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .limitations li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .tech-icons {
+                gap: 20px;
+            }
+            
+            .tech-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🌐</div>
+                <div class="logo-text">onlybrowse</div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Web-Only Development</h1>
+            <p class="subtitle">
+                Simplify your workflow. Control your entire digital context with just HTML, JS, and CSS. 
+                A powerful Safari-only developer experience on macOS.
+            </p>
+            <a href="https://github.com/janwilmake/onlybrowse" class="cta-button">🚀 Get Started</a>
+            <a href="#features" class="cta-button">📖 Learn More</a>
+        </section>
+
+        <section class="tech-stack">
+            <h2>The Holy Trinity</h2>
+            <div class="tech-icons">
+                <div class="tech-icon" title="HTML">🏗️</div>
+                <div class="tech-icon" title="CSS">🎨</div>
+                <div class="tech-icon" title="JavaScript">⚡</div>
+                <div class="tech-icon" title="Safari">🧭</div>
+                <div class="tech-icon" title="GitHub.dev">💻</div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Why onlybrowse?</h2>
+                <p style="text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px;">
+                    Embrace the simplicity of browser-based development
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Web-First Approach</h3>
+                        <p>Everything you need runs in the browser. No complex setups, no local environments to manage.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🧭</div>
+                        <h3>Safari Optimized</h3>
+                        <p>Vertical tabs, full URL visibility, and streamlined navigation for the ultimate browsing experience.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>GitHub.dev Integration</h3>
+                        <p>Just press '.' on any GitHub repo to open it instantly in VS Code for the web. No downloads required.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Minimalist Setup</h3>
+                        <p>Hide the dock, optimize your hotkeys, and focus on what matters: building great web experiences.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Instant Switching</h3>
+                        <p>Move between repositories and projects seamlessly with vertical tabs and clean URL management.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Pure Web Tech</h3>
+                        <p>Master HTML, CSS, and JavaScript without the complexity of build tools and local development servers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="limitations">
+            <h3>Current Limitations of GitHub.dev</h3>
+            <ul>
+                <li>No terminal access</li>
+                <li>No localhost development server</li>
+                <li>Limited dependency type checking</li>
+                <li>Git push workflow is less streamlined</li>
+            </ul>
+            <p style="margin-top: 20px; opacity: 0.8;">
+                <strong>Alternatives:</strong> For more complex development needs, consider GitHub Codespaces or Bolt.new
+            </p>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 onlybrowse. Simplify your web development workflow.</p>
+        </footer>
+    </div>
+</body>
+</html>

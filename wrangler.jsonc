@@ -1,0 +1,9 @@
+{
+  "name": "onlybrowse",
+  "compatibility_date": "2025-05-30",
+  "assets":{"directory":"./"},
+  "routes": [
+    { "pattern": "onlybrowse.net", "custom_domain": true },
+    { "pattern": "www.onlybrowse.net", "custom_domain": true }
+  ]
+}

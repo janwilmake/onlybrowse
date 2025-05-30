@@ -16,9 +16,15 @@ If you only browse, you can control your entire digital context with just HTML, 
 - Change the hotkey in VSCode to close a file. Normally its Cmd+W, I recommend Cmd+E for easy access... Cmd+W closes the tab. https://lmpify.com/how-can-i-change-the-bcwg950
 - Alter title of `github.dev`. To make it easier to navigate across repos, this script edits the title to be just the reponame.  https://lmpify.com/how-can-i-make-a-tam-bzexzp0
 
-# limitations
 
-Currently the following are the biggest limitations I see for most developers to move towards only using the browser (but if you really want to, you can work around them)
+# why github.dev
 
-- no terminal; github.dev is limited as it has no terminal. alternatives are github codespaces and bolt.new
-- 
+From any github repo, you can just type '.' to open it in github.dev which is super easy.
+
+# limitations github.dev
+
+Currently the following are the biggest limitations I see for most developers to move towards only using the github.dev. if this is too limiting for you as a coding experience, alternatives are github codespaces and bolt.new in the browser.
+
+- no terminal
+- no localhost
+- no dependency types

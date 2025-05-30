@@ -1,6 +1,6 @@
 # onlybrowse 
 
-If you only browse, you can control your entire digital context with just HTML, JS and CSS; a very powerful combo! This repo contains a collection of techniques to allow for a workable safari-only developer experience on MacOS.
+We must simplify our interfaces. Let's conventionalise to web-only with onlybrowse. If you only browse, you can control your entire digital context with just HTML, JS and CSS; a very powerful combo! This repo contains a collection of techniques to allow for a workable safari-only developer experience on MacOS.
 
 ## MacOS Settings
 

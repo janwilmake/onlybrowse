@@ -16,7 +16,6 @@ If you only browse, you can control your entire digital context with just HTML, 
 - Change the hotkey in VSCode to close a file. Normally its Cmd+W, I recommend Cmd+E for easy access... Cmd+W closes the tab. https://lmpify.com/how-can-i-change-the-bcwg950
 - Alter title of `github.dev`. To make it easier to navigate across repos, this script edits the title to be just the reponame.  https://lmpify.com/how-can-i-make-a-tam-bzexzp0
 
-
 # why github.dev
 
 From any github repo, you can just type '.' to open it in github.dev which is super easy.

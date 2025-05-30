@@ -27,3 +27,4 @@ Currently the following are the biggest limitations I see for most developers to
 - no terminal
 - no localhost
 - no dependency types
+- git push is slightly more awkward
